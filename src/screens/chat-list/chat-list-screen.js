@@ -26,11 +26,6 @@ export function ChatListScreen({ navigation, route }) {
   const [Joined_channels, setJoined_Channels] = useState([]);
   const [AccessChannels, setAccessChannels] = useState([])
 
-
-  const accountSid = process.env.TWILIO_ACCOUNT_SID;
-  const apiKey = process.env.TWILIO_API_KEY;
-  const apiSecret = process.env.TWILIO_API_SECRET;
-
   // const client_ = new Client(accountSid, apiKey, apiSecret);
   // // Get a reference to the chat service
   // const chatService = client_.services(process.env.TWILIO_CHAT_SERVICE_SID);
