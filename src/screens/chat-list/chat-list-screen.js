@@ -14,7 +14,9 @@ import { ChatListItem } from './components/chat-list-item';
 import { useIsFocused } from '@react-navigation/native';
 
 export function ChatListScreen({ navigation, route }) {
-  const { username } = route.params;
+  const { setUser_name, user_name } = useApp();
+  // const { username } = route.params;
+  const username = user_name
   const [loading, setLoading] = useState(true);
   const { channels, updateChannels } = useApp();
   const channelPaginator = useRef();

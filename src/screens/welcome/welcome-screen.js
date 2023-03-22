@@ -5,10 +5,12 @@ import { colors } from '../../theme';
 import { routes } from '../../app';
 import { images } from '../../assets';
 import { createUser_API } from '../../services/api-service';
+import { useApp } from "../../app-context";
 
 export function WelcomeScreen({ navigation }) {
   const [username, setUsername] = useState('');
 
+  const { setUser_name } = useApp();
 
   const createUser = () => {
     const res = createUser_API(username)
@@ -28,9 +30,11 @@ export function WelcomeScreen({ navigation }) {
       <TouchableOpacity
         disabled={!username}
         style={styles.button}
-        onPress={() =>
+        onPress={() => {
           // createUser(username)
+          setUser_name(username)
           navigation.navigate(routes.ChatList.name, { username })
+        }
         }>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
